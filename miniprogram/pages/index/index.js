@@ -1,5 +1,6 @@
 //index.js
-const app = getApp()
+const app = getApp();
+var rd; 
 
 Page({
   data: {
@@ -7,7 +8,13 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    property: 'align-self',
+    grammar: {},
+    value: {},
+    example: '',
+    hasChild: false,
+    introduction: {},
   },
 
   onLoad: function() {
@@ -17,11 +24,29 @@ Page({
       })
       return
     }
-
     const db = wx.cloud.database()
-    db.collection('css').get({
+    db.collection('css').where(
+      {'property': this.data['property'], 
+      'introduction': this.data['introduction'],
+      'value': this.data['value']
+      }
+    ).get({
       success: res => {
-        console.log('read database successful',res.data)
+        //rd 记录结果集合
+        rd = res.data;
+        console.log(typeof (rd))
+        console.log('read database successful',rd)
+        rd = rd[0];
+        rd=rd['content'];
+       // console.log(rd)
+       // console.log(rd['example'])
+        this.setData({hasChild: rd['hasChild']})
+        this.setData({ example: rd['example']})
+        this.setData({introduction: rd['introduction']})
+        this.setData({value: rd['value']})
+        this.setData({grammar: rd['grammar']})
+        
+
       },
       fail: err => {
         wx.showToast({
@@ -32,6 +57,9 @@ Page({
       }
     })
 
+    
+    
+  
     // 获取用户信息
     wx.getSetting({
       success: res => {
