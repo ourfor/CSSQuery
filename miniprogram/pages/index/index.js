@@ -34,8 +34,7 @@ Page({
       success: res => {
         //rd 记录结果集合
         rd = res.data;
-        console.log(typeof (rd))
-        console.log('read database successful',rd)
+        //console.log('read database successful',rd)
         rd = rd[0];
         rd=rd['content'];
        // console.log(rd)

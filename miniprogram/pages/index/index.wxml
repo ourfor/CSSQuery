@@ -4,7 +4,7 @@
 <i-steps current="{{verticalCurrent}}" direction="vertical">
     <i-step>
         <view slot="title">
-          <view id='syntax' wx:for="{{grammar}}" wx:for-item="item">
+          <view id='syntax' wx:for="{{grammar}}" wx:key="item">
           <text class='grammar'>{{item.name}}:<text id='syntax_value'>{{item.value}}</text></text>
           </view>
         </view>
@@ -15,7 +15,7 @@
     <i-step>
         <view slot="title">
             <view id="intro_container">
-            <view id='intro' wx:for="{{introduction}}" wx:for-item="item">
+            <view id='intro' wx:for="{{introduction}}" wx:key="item">
             <i-icon type="enterinto" size='23'/><text class='introduction'>{{item}}</text>
             </view>
             </view>
@@ -32,7 +32,7 @@
 <i-card title="Value" extra="属性的可取值" thumb="https://book.ourfor.top/favicon.ico">
                 <view slot="content">
                 <i-cell-group>
-                <view id='valueView' wx:for="{{value}}" wx:for-item="item">
+                <view id='valueView' wx:for="{{value}}" wx:key="item">
                 <i-cell><text class='value'>{{item.name}}:{{item.value}}</text></i-cell>
                 </view>
                 </i-cell-group>
