@@ -1,4 +1,5 @@
 <text class='title'>{{property}}</text>
+
 <view class='gap'></view>
 
 <i-steps current="{{verticalCurrent}}" direction="vertical">
@@ -29,7 +30,7 @@
 <view class='gap'></view>
 
 <view class='gap'></view>
-<i-card title="Value" extra="属性的可取值" thumb="https://book.ourfor.top/favicon.ico">
+<i-card title="" extra="属性的可取值" thumb="{{value_pic}}">
                 <view slot="content">
                 <i-cell-group>
                 <view id='valueView' wx:for="{{value}}" wx:key="item">
@@ -41,11 +42,33 @@
 <view class='gap'></view>
 
 
-
-
+<i-divider content="代码示例"></i-divider>
+            <text id='code'>{{example}}</text>
 
 
 <view class='gap'></view>
-<text id='code'>{{example}}</text>
+
+
+
+<!--页面评分-->
+<i-cell-group>
+     <i-cell title="给个评价呗">
+        <i-rate
+            bind:change="onChange3" 
+            value="{{starIndex3}}">
+            {{starIndex3}}星
+        </i-rate>
+    </i-cell>
+</i-cell-group>
+
+<!--底部通知栏-->
+
+
+<i-notice-bar icon="systemprompt">
+    CSS样式查询手册
+</i-notice-bar>
+
+
+
 
 

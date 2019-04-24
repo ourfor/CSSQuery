@@ -10,9 +10,9 @@
     "pages/openapi/openapi"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#fff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "CSS宝典",
     "navigationBarTextStyle": "black"
   },
@@ -23,6 +23,12 @@
     "i-cell": "/dist/cell/index",
     "i-card": "/dist/card/index",
     "i-steps": "/dist/steps/index",
-    "i-step": "/dist/step/index"
+    "i-step": "/dist/step/index",
+    "i-notice-bar": "/dist/notice-bar/index",
+    "i-spin": "/dist/spin/index",
+    "i-rate": "/dist/rate/index",
+    "i-divider": "/dist/divider/index",
+    "i-collapse": "/dist/collapse/index",
+    "i-collapse-item": "/dist/collapse-item/index"
   }
 }

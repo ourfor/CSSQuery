@@ -15,6 +15,16 @@ Page({
     example: '',
     hasChild: false,
     introduction: {},
+    value_pic: "cloud://data-4a115d.6461-data-4a115d/book_mark_life.png",
+    //页面评分
+    starIndex3: 0
+  },
+  //页面评分·更改
+  onChange3(e) {
+    const index = e.detail.index;
+    this.setData({
+      'starIndex3': index
+    })
   },
 
   onLoad: function() {
@@ -24,6 +34,7 @@ Page({
       })
       return
     }
+
     const db = wx.cloud.database()
     db.collection('css').where(
       {'property': this.data['property'], 
