@@ -1,16 +1,51 @@
 <text class='title'>{{property}}</text>
 <view class='gap'></view>
-<view id='syntax' wx:for="{{grammar}}" wx:for-item="item">
-<text class='grammar'>{{item.name}}:{{item.value}}</text>
-</view>
+
+<i-steps current="{{verticalCurrent}}" direction="vertical">
+    <i-step>
+        <view slot="title">
+          <view id='syntax' wx:for="{{grammar}}" wx:for-item="item">
+          <text class='grammar'>{{item.name}}:<text id='syntax_value'>{{item.value}}</text></text>
+          </view>
+        </view>
+        <view slot="content">
+            语法规范
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            <view id="intro_container">
+            <view id='intro' wx:for="{{introduction}}" wx:for-item="item">
+            <i-icon type="enterinto" size='23'/><text class='introduction'>{{item}}</text>
+            </view>
+            </view>
+        </view>
+        <view slot="content">
+            相关说明
+        </view>
+    </i-step>
+</i-steps>
+
 <view class='gap'></view>
-<view id='intro' wx:for="{{introduction}}" wx:for-item="item">
-<text class='introduction'>{{item}}</text>
-</view>
+
 <view class='gap'></view>
-<view id='valueView' wx:for="{{value}}" wx:for-item="item">
-<text class='value'>{{item.name}}:{{item.value}}</text>
-</view>
+<i-card title="Value" extra="属性的可取值" thumb="https://book.ourfor.top/favicon.ico">
+                <view slot="content">
+                <i-cell-group>
+                <view id='valueView' wx:for="{{value}}" wx:for-item="item">
+                <i-cell><text class='value'>{{item.name}}:{{item.value}}</text></i-cell>
+                </view>
+                </i-cell-group>
+                </view>
+            </i-card>
+<view class='gap'></view>
+
+
+
+
+
 
 <view class='gap'></view>
 <text id='code'>{{example}}</text>
+
+

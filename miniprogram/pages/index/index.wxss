@@ -6,7 +6,7 @@
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.07), 0 3px 3px 0 rgba(0,0,0,.1);
   width: 80%;
   font-size:0.8em;
-  margin: 1px auto;
+  margin: 8px auto;
   text-align: left;
   overflow:auto;
   padding: 1em;
@@ -31,10 +31,32 @@
 .grammar,#syntax,#intro,.introduction{
   text-align: left;
   width: 90%;
-  border: 1px solid #e9e9e9;
   margin: 0 auto;
+  margin-left: .5em;
 }
 
+#syntax_value{
+  font-weight: 200;
+  padding-left: 4px;
+}
+
+#intro_container{
+  width: 90%;
+  border: 1px solid #e9e9e9;
+  box-shadow: 0 2px 2px 0 ragb(0,0,0,.07), 0 3px 3px 0 rgba(0,0,0,.1);
+  margin: 0 auto;
+  padding: 2px;
+}
+
+.introduction{
+  border: 0;
+  margin: 2px 0;
+}
+
+
+#valueView{
+  text-align: left;
+}
 
 
 page {

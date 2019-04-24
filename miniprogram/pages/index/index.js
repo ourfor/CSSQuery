@@ -9,7 +9,7 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    property: 'align-self',
+    property: 'cursor',
     grammar: {},
     value: {},
     example: '',
