@@ -12,10 +12,10 @@
 <table>
   <tr>
     <td>
-      <img src="https://file.ourfor.top/source/CSSQuery/ToManySoftware.gif">
+      <img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f8pnteqoj30u01hcags.jpg">
     </td>
     <td>
-      <img src="https://file.ourfor.top/source/CSSQuery/UseTime.gif">
+      <img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f8pyqihaj30u01hcdl5.jpg">
     </td>
     <td>
       <img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f8c9a16wj30u01hcwlo.jpg">
