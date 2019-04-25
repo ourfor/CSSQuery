@@ -1,4 +1,4 @@
-<div style="text-align:center"><em>基于微信云开发查询工具</em></div>
+<p align=center><em>基于<code>微信云</code>开发的<code>查询工具</code></em></div>
 
 # 主要功能
 
