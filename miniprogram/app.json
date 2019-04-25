@@ -7,7 +7,8 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi"
+    "pages/openapi/openapi",
+    "pages/main/main"
   ],
   "window": {
     "backgroundColor": "#fff",
@@ -27,10 +28,10 @@
     "i-notice-bar": "/dist/notice-bar/index",
     "i-spin": "/dist/spin/index",
     "i-rate": "/dist/rate/index",
+    "i-button": "/dist/button/index",
     "i-divider": "/dist/divider/index",
     "i-collapse": "/dist/collapse/index",
     "i-collapse-item": "/dist/collapse-item/index",
     "WxComment": "/WxComment/component/WxComment/WxComment"
-
   }
 }

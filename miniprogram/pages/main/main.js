@@ -1,44 +1,48 @@
-//index.js
-const app = getApp();
-var rd; 
-
+// miniprogram/pages/main/index.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: '',
-    keyword:'',   //从客户端输入的查询内容
-    propetry: 'cursor'
+    rd: '',
+    property: 'cursor',
+    grammar: {},
+    value: {},
+    example: '',
+    hasChild: false,
+    introduction: {},
+    value_pic: "cloud://data-4a115d.6461-data-4a115d/book_mark_life.png",
+    //页面评分
+    starIndex3: 0,
+    md: ""
   },
-
-  keyword:function(event){
-    this.setData({
-      keyword: event.detail.value
-    })
-  },
-  doSearch:function(event){
-    var keyword = null;
-    if(event){
-      keyword = event.currentTarget.dataset.keyword
-    }
-    console.log(keyword)
-    console.log(typeof(keyword))
-    wx.setStorageSync('keyword',keyword)
-    wx.navigateTo({
-      url: '/pages/main/main'
-    })
-  },
-
   //页面评分·更改
-    onLoad: function () {
+  onChange3(e) {
+    const index = e.detail.index;
+    this.setData({
+      'starIndex3': index
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function () {
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
       })
       return
     }
+
+    let keyword = wx.getStorageSync('keyword');
+    this.setData({ property: keyword });
 
     const db = wx.cloud.database()
     db.collection('css').where(
@@ -50,8 +54,23 @@ Page({
     ).get({
       success: res => {
         //rd 记录结果集合
-        //console.log(res.data)
-
+        //rd 记录结果集合
+        let rd = res.data;
+        //console.log('read database successful',rd)
+        if(rd==''){
+          console.log("查询失败");
+          wx.navigateBack()
+        }
+        rd = rd[0];
+        rd = rd['content'];
+        // console.log(rd)
+        // console.log(rd['example'])
+        this.setData({ hasChild: rd['hasChild'] })
+        this.setData({ example: rd['example'] })
+        this.setData({ md: "```html\n" + rd['example'] + "\n```" })
+        this.setData({ introduction: rd['introduction'] })
+        this.setData({ value: rd['value'] })
+        this.setData({ grammar: rd['grammar'] })
 
       },
       fail: err => {
