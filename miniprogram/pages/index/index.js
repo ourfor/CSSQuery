@@ -17,7 +17,8 @@ Page({
     introduction: {},
     value_pic: "cloud://data-4a115d.6461-data-4a115d/book_mark_life.png",
     //页面评分
-    starIndex3: 0
+    starIndex3: 0,
+    md: ""
   },
   //页面评分·更改
   onChange3(e) {
@@ -52,6 +53,7 @@ Page({
        // console.log(rd['example'])
         this.setData({hasChild: rd['hasChild']})
         this.setData({ example: rd['example']})
+        this.setData({ md: "```html\n" + rd['example']+"\n```"})
         this.setData({introduction: rd['introduction']})
         this.setData({value: rd['value']})
         this.setData({grammar: rd['grammar']})

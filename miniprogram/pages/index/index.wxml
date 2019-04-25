@@ -43,9 +43,7 @@
 
 
 <i-divider content="代码示例"></i-divider>
-            <text id='code'>{{example}}</text>
-
-
+<view id='code_md'><wemark md="{{md}}" link highlight type="wemark"></wemark></view>
 <view class='gap'></view>
 
 
