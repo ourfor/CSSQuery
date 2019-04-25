@@ -29,6 +29,8 @@
     "i-rate": "/dist/rate/index",
     "i-divider": "/dist/divider/index",
     "i-collapse": "/dist/collapse/index",
-    "i-collapse-item": "/dist/collapse-item/index"
+    "i-collapse-item": "/dist/collapse-item/index",
+    "WxComment": "/WxComment/component/WxComment/WxComment"
+
   }
 }

@@ -59,6 +59,12 @@
     </i-cell>
 </i-cell-group>
 
+<!--评论系统-->
+
+<view class="WxComment">
+  <WxComment tipOne="" tipTwo="" submitBtnText="回复" articleID="{{property}}" contentLen='1' theme="light"></WxComment>
+</view>
+
 <!--底部通知栏-->
 
 
