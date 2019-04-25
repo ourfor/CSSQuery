@@ -19,6 +19,12 @@
 </table>
 
 
+# Credit
+
+| <img src="https://avatars2.githubusercontent.com/u/33711476?v=4" alt="ourfor" width="100px" height="100px"/> |<img src="https://avatars2.githubusercontent.com/u/44439053?v=4" alt="ourEmpire" width="100px" height="100px"/> |
+| :----: |:----: |
+| [ourfor](https://github.com/ourfor) |[ourEmpire](https://github.com/ourEmpire) |
+
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
