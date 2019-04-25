@@ -1,5 +1,34 @@
 <p align=center><em>基于<code>微信云</code>开发的<code>查询工具</code></em></div>
 
+# 开发理由
+1. 诸如金山词霸的查询软件 体积大，占用内存多 耗电 自启动 广告,有多少我们只用一次，有多少我们只需要使用它的一个小的功能,这些软件会产生大量的缓存文件
+2. Linux学习过程中有不太记得的命令会使用manual手册查询，即man命令，于是就想开发出一个查询css属性，html语法，java包api的小程序
+3. 为学习提供方便
+4. 微信是一个好交流的平台，有不懂的东西可以讨论交流
+
+
+> 也并非所有的程序都适合使用小程序开发，例如阅读软件，轻办公软件
+
+<table>
+  <tr>
+    <td>
+      <img src="https://file.ourfor.top/source/CSSQuery/ToManySoftware.gif">
+    </td>
+    <td>
+      <img src="https://file.ourfor.top/source/CSSQuery/UseTime.gif">
+    </td>
+    <td>
+      <img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f8c9a16wj30u01hcwlo.jpg">
+    </td>
+    <td>
+      <img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f890u573j30u01hc77l.jpg">
+    </td>
+  </tr>
+</table>
+  
+
+
+
 # 主要功能
 
 - 提供查询服务，具体可查询的内容取决于我们的数据库，只要我们的数据库足够丰富，可查询的内容就很多
