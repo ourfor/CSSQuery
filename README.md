@@ -18,6 +18,12 @@
   </tr>
 </table>
 
+# 如何扩充数据库
+
+![](https://ws1.sinaimg.cn/large/005GQrpLgy1g2evn8zc29j32bi1qw4mz.jpg)
+使用java爬取特定网页，同时将爬取的数据实例化一个` JavaBean `对象，内容爬取完毕后，序列化到硬盘，再导入到我们的云开发数据库
+
+可以尝试爬取Sun的java包的api文档，html5的语法文档等等。
 
 # Credit
 
