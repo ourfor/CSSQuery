@@ -9,9 +9,13 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
+    quickId: '5cc29cd28387daf78a191bde',
     keyword:'',   //从客户端输入的查询内容
     propetry: 'cursor',
-    titleImage: "./CSSQuery.png"
+    titleImage: "./CSSQuery.png",
+    keywordSet: {},
+    inputLegal: "",
+    exist: false
   },
 
   keyword:function(event){
@@ -28,12 +32,26 @@ Page({
       keyword = keyword.replace(/ /g,"")
       keyword = keyword.trim();    // 去掉首尾空格
     }
-    console.log(keyword)
-    console.log(typeof(keyword))
-    wx.setStorageSync('keyword',keyword)
-    wx.navigateTo({
+    //判断是否存在这样的属性
+    let SearchSet = this.data['keywordSet'];
+    let exist = SearchSet.hasOwnProperty(keyword);
+    if(exist){
+      this.setData({
+        inputLegal: ""
+      })
+      wx.setStorageSync('keyword',keyword)
+      wx.navigateTo({
       url: '/pages/main/main'
-    })
+      })
+    }
+    else{
+      //console.log("不存在这样的属性");
+      this.setData({
+        inputLegal: "不存在这样的属性"
+      })
+    }
+
+    
   },
 
   //页面评分·更改
@@ -45,31 +63,19 @@ Page({
       return
     }
 
-    const db = wx.cloud.database()
-    db.collection('css').where(
-      {
-        'property': this.data['property'],
-        'introduction': this.data['introduction'],
-        'value': this.data['value']
-      }
-    ).get({
+    const db = wx.cloud.database();
+    db.collection('quick').doc(this.data['quickID']).get({
       success: res => {
-        //rd 记录结果集合
-        //console.log(res.data)
-
-
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          titile: 'read failed'
+        this.setData({
+          keywordSet: res.data.quick
         })
-        console.error('read failed', err)
+        //console.log(this.data['keywordSet']);
+        
+      },
+      fail: () => {
+        console.log("未查询到预期结果");
       }
     })
-
-
-
 
     // 获取用户信息
     wx.getSetting({

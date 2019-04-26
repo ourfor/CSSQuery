@@ -11,7 +11,7 @@ Page({
     takeSession: false,
     requestResult: '',
     rd: '',
-    property: 'cursor',
+    property: 'main',
     grammar: {},
     value: {},
     example: '',
@@ -47,9 +47,7 @@ Page({
     const db = wx.cloud.database()
     db.collection('css').where(
       {
-        'property': this.data['property'],
-        'introduction': this.data['introduction'],
-        'value': this.data['value']
+        'property': this.data['property']
       }
     ).get({
       success: res => {

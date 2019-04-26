@@ -8,4 +8,6 @@
     <view class='gap'></view>
     <i-icon bindtap="doSearch" data-keyword="{{keyword}}" type="search" size="45" color="#19be6b" />
     </form>
+
+    <view id="tip">{{inputLegal}}</view>
 </view>
