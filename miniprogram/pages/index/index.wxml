@@ -1,10 +1,10 @@
 <!--index.wxml-->
-<view class="container">
-  <text id='title'>
-  CSS3 速查手册
-  </text>
+<view class="container"> 
+  <view id="title">
+    <image src="{{titleImage}}"></image>
+  </view>
     <form>
-    <input id='search' type='text' placeholder='输入你要查询的命令' bindinput='keyword'></input>
+    <input id='search' type='text' placeholder='输入你要查询的属性' bindinput='keyword'></input>
     <view class='gap'></view>
     <i-icon bindtap="doSearch" data-keyword="{{keyword}}" type="search" size="45" color="#19be6b" />
     </form>

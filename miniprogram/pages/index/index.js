@@ -10,7 +10,8 @@ Page({
     takeSession: false,
     requestResult: '',
     keyword:'',   //从客户端输入的查询内容
-    propetry: 'cursor'
+    propetry: 'cursor',
+    titleImage: "./CSSQuery.png"
   },
 
   keyword:function(event){
@@ -19,9 +20,13 @@ Page({
     })
   },
   doSearch:function(event){
-    var keyword = null;
+    let keyword = null;
     if(event){
       keyword = event.currentTarget.dataset.keyword
+      keyword = keyword.toLowerCase();  //忽略大小写
+      keyword = keyword.replace("－","-");  //忽略中文分隔符
+      keyword = keyword.replace(/ /g,"")
+      keyword = keyword.trim();    // 去掉首尾空格
     }
     console.log(keyword)
     console.log(typeof(keyword))
