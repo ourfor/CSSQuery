@@ -3,11 +3,25 @@
   <view id="title">
     <image src="{{titleImage}}"></image>
   </view>
+
+  <!--搜索表单-->
     <form>
     <input id='search' type='text' placeholder='输入你要查询的属性' bindinput='keyword'></input>
     <view class='gap'></view>
     <i-icon bindtap="doSearch" data-keyword="{{keyword}}" type="search" size="45" color="#19be6b" />
     </form>
-
+    <!--显示错误信息-->
     <view id="tip">{{inputLegal}}</view>
+
+    <view class="gap"></view><view class="gap"></view>
+    <!--显示热词-->
+    <view id="hot">
+        <view wx:for="{{hotSearch}}" wx:key="item" style="display: inline;">
+          <i-tag bindtap='hotSearch' data-keyword='{{item.keyword}}' datclass="i-tags" name="标签一" type="dot" color="{{item.color}}">{{item.keyword}}</i-tag>
+          <view class="space"></view>
+        </view>
+    </view>
+
+    
+
 </view>

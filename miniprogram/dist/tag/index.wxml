@@ -6,7 +6,7 @@
 <wxs module="parse"> 
 module.exports = {
     getClass : function(color,type,checked,checkable) {
-        var initColorList = ['blue', 'green', 'red', 'yellow', 'default'];
+        var initColorList = ['blue', 'green', 'red', 'yellow', 'violet', 'pink', 'honeydew', 'lightsalmon', 'peru', 'default'];
         var theme = '';
         var className = 'i-tag-';
         if( initColorList.indexOf( color ) > -1 ){

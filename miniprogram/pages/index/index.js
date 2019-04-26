@@ -15,7 +15,10 @@ Page({
     titleImage: "./CSSQuery.png",
     keywordSet: {},
     inputLegal: "",
-    exist: false
+    exist: false,
+    hotSearch: {},
+    times: [1,2,3],
+    hotId: "hot"
   },
 
   keyword:function(event){
@@ -54,6 +57,17 @@ Page({
     
   },
 
+  //点击热门词汇按钮
+  hotSearch: function(event){
+      //console.log("被点击了");
+      let keyword = event.currentTarget.dataset.keyword;
+      //console.log(keyword)
+      wx.setStorageSync('keyword', keyword)
+      wx.navigateTo({
+        url: '/pages/main/main'
+      })
+  },
+
   //页面评分·更改
     onLoad: function () {
     if (!wx.cloud) {
@@ -76,6 +90,16 @@ Page({
         console.log("未查询到预期结果");
       }
     })
+
+    //获取搜索热词
+    db.collection("hot").doc(this.data['hotId']).get({
+      success: res=>{
+        //console.log(res.data);
+        this.setData({hotSearch:res.data.keyword})
+        //console.log(this.data['hotSearch'])
+      }
+    })
+
 
     // 获取用户信息
     wx.getSetting({

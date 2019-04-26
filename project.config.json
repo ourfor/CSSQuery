@@ -8,7 +8,8 @@
 		"minified": true,
 		"newFeature": true,
 		"nodeModules": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"appid": "wxb7ef42d5adb07dfb",
 	"projectname": "CssQuery",
