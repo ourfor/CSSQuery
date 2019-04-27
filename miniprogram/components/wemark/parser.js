@@ -180,9 +180,9 @@ function parse(md, options){
 				});
 			}
 			// flatten nested tokens in html
-			// if (blockToken.params === 'html') {
-				// content = flattenTokens(content)
-			// }
+			//if (blockToken.params === 'html') {
+			//content = flattenTokens(content)
+			//}
 			// console.log(content);
 
 			return {

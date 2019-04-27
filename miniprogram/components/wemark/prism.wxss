@@ -79,3 +79,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  .wemark_inline_code_entity {
 	 cursor: help;
  }
+
+ .wemark_inline_code_text{
+   
+ }
