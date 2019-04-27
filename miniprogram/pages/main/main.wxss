@@ -45,6 +45,11 @@
   margin-left: .5em;
 }
 
+.introduction{
+  height: 100%;
+}
+
+
 #syntax_value{
   font-weight: 200;
   padding-left: 4px;
@@ -62,6 +67,10 @@
 .introduction{
   border: 0;
   margin: 2px 0;
+}
+
+.value .name{
+  color: rgb(240, 113, 113);
 }
 
 

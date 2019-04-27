@@ -34,7 +34,7 @@
                 <view slot="content">
                 <i-cell-group>
                 <view id='valueView' wx:for="{{value}}" wx:key="item">
-                <i-cell><text class='value'>{{item.name}}:{{item.value}}</text></i-cell>
+                <i-cell><text class='value'><text class='name'>{{item.name}}</text>:{{item.value}}</text></i-cell>
                 </view>
                 </i-cell-group>
                 </view>
