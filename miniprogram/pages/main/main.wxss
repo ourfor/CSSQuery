@@ -174,10 +174,7 @@ page{
   padding: 0;
 }
 
-@font-face{
-  font-family: NotoSans;
-  src: url("https://file.ourfor.top/tools/NotoSansSC-Regular.ttf")
-}
+@import "/style/NotoSans.wxss";
 
 page {
   font-family: NotoSans;
