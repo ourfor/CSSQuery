@@ -2,6 +2,13 @@
 const app = getApp();
 var rd; 
 
+var wayIndex = -1;
+var school_area = '';
+var grade = '';
+// 当联想词数量较多，使列表高度超过340rpx，那设置style的height属性为340rpx，小于340rpx的不设置height，由联想词列表自身填充
+// 结合上面wxml的<scroll-view>
+var arrayHeight = 0;
+
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -12,19 +19,53 @@ Page({
     quickId: '5cc29cd28387daf78a191bde',
     keyword:'',   //从客户端输入的查询内容
     propetry: 'cursor',
-    titleImage: "./CSSQuery.png",
+    titleImage1: "./CSSQuery.png",
+    titleImage: "./logo.png",
     keywordSet: {},
     inputLegal: "",
     exist: false,
     hotSearch: {},
     times: [1,2,3],
-    hotId: "hot"
+    hotId: "hot",
+    hideScroll: true,  //联想框列表
+    selectWord: [], //联想供用户选择的关键字
+    selectSet: ["text-align","text-content","text-uppercase"],
+    inputValue: "",
   },
 
   keyword:function(event){
     this.setData({
       keyword: event.detail.value
     })
+    let e = event;
+    var prefix = e.detail.value
+    //匹配的结果
+    var newSource = []
+    if (prefix != "") {
+      // 对于数组array进行遍历，功能函数中的参数 `e`就是遍历时的数组元素值。
+      this.data.selectSet.forEach(function (e) {
+        // 用户输入的字符串如果在数组中某个元素中出现，将该元素存到newSource中
+        if (e.indexOf(prefix) != -1) {
+          console.log(e);
+          newSource.push(e)
+        }
+      })
+    };
+    // 如果匹配结果存在，那么将其返回，相反则返回空数组
+    if (newSource.length != 0) {
+      this.setData({
+        // 匹配结果存在，显示自动联想词下拉列表
+        hideScroll: false,
+        selectWord: newSource,
+        arrayHeight: newSource.length * 71
+      })
+    } else {
+      this.setData({
+        // 匹配无结果，不现实下拉列表
+        hideScroll: true,
+        selcetWord: []
+      })
+    }
   },
   doSearch:function(event){
     let keyword = null;
@@ -57,6 +98,22 @@ Page({
     
   },
 
+  //处理联想词汇点击
+  itemtap: function(event){
+      this.setData({
+        hideScroll: true,
+        selectWord: [],
+        keyword: event.currentTarget.dataset.keyword,
+        inputValue: event.currentTarget.dataset.keyword
+      });
+    let keyword = event.currentTarget.dataset.keyword;
+      wx.setStorageSync('keyword', keyword);
+      wx.navigateTo({
+        url: '/pages/main/main'
+      });
+      //console.log(this.data['keyword'])
+  },
+
   //点击热门词汇按钮
   hotSearch: function(event){
       //console.log("被点击了");
@@ -84,7 +141,20 @@ Page({
           keywordSet: res.data.quick
         })
         //console.log(this.data['keywordSet']);
-        
+        let keywordSet = this.data['keywordSet']
+        let keywordArray = new Array();
+        for(let i in keywordSet){
+          //console.log(i);
+          keywordArray.push(i);
+        }
+        //console.log(keywordArray)
+        //this.setData({selectSet:keywordArray});
+        console.log(this.data['selectSet']);
+        this.setData({
+          selectSet: keywordArray
+        });
+        console.log(this.data['selectSet']);
+
       },
       fail: () => {
         console.log("未查询到预期结果");

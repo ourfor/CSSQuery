@@ -168,3 +168,21 @@ page {
 .tunnel-text:first-child {
   border-top: none;
 }
+
+page{
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+@font-face{
+  font-family: NotoSans;
+  src: url("https://file.ourfor.top/tools/NotoSansSC-Regular.ttf")
+}
+
+page {
+  font-family: NotoSans;
+}
+
+#code_md{
+  font-family: none;
+}

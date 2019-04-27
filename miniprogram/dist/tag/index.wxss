@@ -1,7 +1,7 @@
 .i-tag {
 	display: inline-block;
 	height: 24px;
-	line-height: 24px;
+	line-height: 23px;
 	padding: 0 6px;
 	border-radius: 5px;
 	background: #fff;
@@ -170,4 +170,22 @@
 	border-color: lightsalmon
 }
 
+
+.i-tag-violet {
+	background: blueviolet;
+	color: #fff;
+	border-color: blueviolet
+}
+
+.i-tag-violet-border {
+	color: blueviolet;
+	background: #fff;
+	border-color: blueviolet
+}
+
+.i-tag-violet-checked {
+	background: blueviolet;
+	color: #fff;
+	border-color: blueviolet
+}
 

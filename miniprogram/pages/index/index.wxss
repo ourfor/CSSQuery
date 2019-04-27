@@ -10,9 +10,10 @@
   padding: 0;
   margin: 0;
   /*调整宽度*/
-  height: 60px;
+  /*height: 60px;*/
   mode: widthFix;
-  width: 330rpx;
+  /*width: 330rpx;*/
+  width: 400rpx;
 
 }
 
@@ -45,6 +46,11 @@ form{
 
 }
 
+.scrollview{
+  font-style: italic;
+  font-weight: 300;
+}
+
 .i-btn-primary{
   width: 80px;
   margin: auto;
@@ -68,6 +74,15 @@ icon[type=search]{
   font-weight: 300;
   font-size: 0.8em;
   font-style: italic;
+}
+
+@font-face{
+  font-family: NotoSans;
+  src: url("https://file.ourfor.top/tools/NotoSansSC-Regular.ttf")
+}
+
+page {
+  font-family: NotoSans;
 }
 
 page {
