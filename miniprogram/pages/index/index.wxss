@@ -37,6 +37,7 @@ form{
     font-size: 1em; 
     border: 2px solid #3a5286;
     border-radius: 17px;
+    border-radius: 25px;
     width: 80%;
     padding: 20px auto;
     outline: none;
