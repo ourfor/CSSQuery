@@ -44,6 +44,7 @@ form{
     transition: 0.25s;
     /*margin-top: 30%;*/
     color: rgb(37, 32, 32);
+    min-width: 600rpx;
 
 }
 
