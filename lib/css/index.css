@@ -22,13 +22,25 @@ header{
     line-height: 100%;
 }
 
-header>nav a{
+header>nav a,.underline{
     text-decoration-line: none;
-    transform: text 1.5s 1.5s ease-in;
+    position: relative;
 }
 
-header>nav a:hover{
-    text-decoration-line: underline;
+header>nav a:before,.underline:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: #4285f4;
+    transform: scale(0);
+    transition: all 0.3s;
+}
+
+header>nav a:hover:before,.underline:hover:before{
+    transform: scale(1);
 }
 header>.logo{
     float: left;
@@ -85,8 +97,8 @@ article+p{
     float: left;
     margin: 10px 30px;
     border-radius: 10px;
-    font-weight: 300px;
     color: #66707f;
+    font-weight: 200;
 }
 
 .card>section[right]{
@@ -201,4 +213,14 @@ footer{
 
 .fa-li{
     width: 50px;
+}
+
+.fa-ul a{
+    color:#778191;
+    transition: all .3s;
+    text-decoration-line: none; 
+}
+
+.fa_ul a:hover{
+    text-decoration-line: underline;
 }
