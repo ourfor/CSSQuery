@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "wemark": "/components/wemark/wemark",
-    "WxComment": "/components/WxComment/component/WxComment/WxComment"
-  }
-}
