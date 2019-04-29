@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>毛玻璃特效</title>
+        <style>
+            .container{
+                width: 1200px;
+                height: 675px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-image: url("image/girl.jpg");
+                text-align: center;
+            }
+            .content{
+                width: 400px;
+	            height: 400px;
+	            position: absolute;
+	            top: 50%;
+	            left: 50%;
+	            margin-top: -200px;
+	            margin-left: -500px;
+	            border-radius: 8px;
+	            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+	            overflow: hidden;
+	            z-index: 1;
+	            padding: 50px;
+	            box-sizing: border-box;
+            }
+            .content::after{
+                content: '';
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+	            right: 0;
+	            bottom: 0;
+	            -webkit-filter: blur(20px);
+	            -moz-filter: blur(20px);
+	            -ms-filter: blur(20px);
+	            -o-filter: blur(20px);
+	            filter: blur(20px);
+	            z-index: -1;
+	            margin: -30px;
+	            background-image: url("image/girl.jpg");
+	            background-position: center top;
+	            background-size: cover;
+	            background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <section class="content">
+                    The Grineer, with their endless clone armies, have plunged the system into chaos. There is only one force that can match them, you. You are Tenno, an ancient warrior, a master of gun and blade. You wield the mighty Warframes and command their awesome powers. Forge your weapons. Gather like-minded Tenno and take the fight back to the Grineer. The Origin System needs you once again. Are you ready?
+            </section>
+        </section>
+    </body>
+</html>

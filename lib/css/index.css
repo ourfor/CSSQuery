@@ -113,6 +113,30 @@ article+p{
     box-shadow: 0 6px 6px 0 rgba(0,0,0,.07),0 6px 6px 0 rgba(0,0,0,.1);
 }
 
+.display{
+    background-image: url("../../image/girl.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    float: left;
+    height: 675px;
+    z-index: 0;
+}
+.display>div{
+    float: left;
+    width: 40%;
+    height: 80%;
+}
+.display-content{
+    width: 200px;
+    height: 300px;
+	border-radius: 8px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+	overflow: hidden; 
+	padding: 50px;
+    box-sizing: border-box;
+    filter: blur(23px);
+}
+
 .gap{
     height: 20px;
     width: 100%;
