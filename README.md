@@ -1,4 +1,4 @@
-<p align=center><em>基于<code>微信云</code>开发的<code>查询工具</code></em></div>
+<p align=center><em>基于<code>微信云开发</code>开发的<code>查询工具</code></em></div>
 
 ## 开发理由
 1. 诸如金山词霸的查询软件 体积大，占用内存多 耗电 自启动 广告,有多少我们只用一次，有多少我们只需要使用它的一个小的功能,这些软件会产生大量的缓存文件
