@@ -8,6 +8,8 @@
 				<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 				<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
 				<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+				<link class="dplayer-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+				<script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
 		</head>
 		<body>
 				<div class='container'>
@@ -46,27 +48,28 @@
 							<table>
 								<tr>
 									<td>
-										<a href="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f8c9a16wj30u01hcwlo.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f8c9a16wj30u01hcwlo.jpg" />
+										<a href="https://i.loli.net/2019/05/05/5cce5dfd00da2.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="https://i.loli.net/2019/05/05/5cce5dfd00da2.jpg" />
 										</a>
 									</td>
 									<td>
-										<a href="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f890u573j30u01hc77l.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f890u573j30u01hc77l.jpg" />
+										<a href="https://i.loli.net/2019/05/05/5cce5dfd1634c.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="https://i.loli.net/2019/05/05/5cce5dfd1634c.jpg" />
 										</a>
 									</td>
 									<td>
-										<a href="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f9axvw3gj30u01hck0g.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2f9axvw3gj30u01hck0g.jpg" />
+										<a href="https://i.loli.net/2019/05/05/5cce61958ff15.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="https://i.loli.net/2019/05/05/5cce61958ff15.jpg" />
 										</a>
 									</td>
 									<td>
-										<a href="https://ws1.sinaimg.cn/large/005GQrpLgy1g2ev2b0sx0j30u01hcn2c.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2ev2b0sx0j30u01hcn2c.jpg" />
+										<a href="https://i.loli.net/2019/05/05/5cce5dfd27987.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="https://i.loli.net/2019/05/05/5cce5dfd27987.jpg" />
 										</a>
 									</td>
 								</tr>	
 							</table>
+							<div id="dplayer"></div>
 						</section>
 						
 				</div>
@@ -100,4 +103,15 @@
 					</div>
 				</footer>
 		</body>
+		<script>
+		const dp = new DPlayer({
+			container: document.getElementById('dplayer'),
+			screenshot: true,
+			video: {
+				url: 'https://file.ourfor.top/source/CssData.mp4',
+				//pic: 'demo.jpg',
+				//thumbnails: 'thumbnails.jpg'
+			}
+		});
+		</script>
 </html>
