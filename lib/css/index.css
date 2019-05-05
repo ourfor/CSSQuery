@@ -4,6 +4,18 @@ html,body{
     width: 100%;
     text-align: center;
 }
+
+#dplayer.dplayer{
+    overflow-y:visible;
+    overflow-x:visible;
+    float:left;
+    margin: 20px auto;
+    width: 540px;
+    margin-left:330px;
+}
+#deplayer{
+    text-align: center;
+}
 .container{
     width: 1200px;
     margin: 0 auto;

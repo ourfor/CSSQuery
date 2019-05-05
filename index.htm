@@ -4,17 +4,18 @@
 				<title>CssQuery</title>
 				<link rel="shortcut icon" href="image/flower_care.png" />
 				<link rel="stylesheet" type="text/css" href="lib/css/index.css" />
-				<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-				<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+				<link href="lib/css/font-awesome.min.css" rel="stylesheet">
+				<script src="lib/js/jquery-3.3.1.min.js"></script>
 				<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
 				<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 				<link class="dplayer-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
 				<script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
 		</head>
 		<body>
 				<div class='container'>
 						<header>
-							<nav class="logo"><img src="https://ws1.sinaimg.cn/large/005GQrpLgy1g2icadz2mvj305c05cq31.jpg"></nav>
+							<nav class="logo"><img src="image/flower_care.png"></nav>
 							<nav>
 								<span>指南</span>
 								<span><a href="#about">关于</a></span>
@@ -48,30 +49,30 @@
 							<table>
 								<tr>
 									<td>
-										<a href="https://i.loli.net/2019/05/05/5cce5dfd00da2.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://i.loli.net/2019/05/05/5cce5dfd00da2.jpg" />
+										<a href="image/first.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="image/first.jpg" />
 										</a>
 									</td>
 									<td>
-										<a href="https://i.loli.net/2019/05/05/5cce5dfd1634c.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://i.loli.net/2019/05/05/5cce5dfd1634c.jpg" />
+										<a href="image/second.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="image/second.jpg" />
 										</a>
 									</td>
 									<td>
-										<a href="https://i.loli.net/2019/05/05/5cce61958ff15.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://i.loli.net/2019/05/05/5cce61958ff15.jpg" />
+										<a href="image/third.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="image/third.jpg" />
 										</a>
 									</td>
 									<td>
-										<a href="https://i.loli.net/2019/05/05/5cce5dfd27987.jpg" data-fancybox data-caption="Caption for single image">
-											<img src="https://i.loli.net/2019/05/05/5cce5dfd27987.jpg" />
+										<a href="image/fourth.jpg" data-fancybox data-caption="Caption for single image">
+											<img src="image/fourth.jpg" />
 										</a>
 									</td>
 								</tr>	
 							</table>
-							<div id="dplayer"></div>
 						</section>
-						
+
+						<div id="dplayer"></div>					
 				</div>
 				<footer>
 					<div class="gap"></div>
@@ -104,14 +105,16 @@
 				</footer>
 		</body>
 		<script>
-		const dp = new DPlayer({
-			container: document.getElementById('dplayer'),
-			screenshot: true,
-			video: {
-				url: 'https://file.ourfor.top/source/CssData.mp4',
-				//pic: 'demo.jpg',
-				//thumbnails: 'thumbnails.jpg'
-			}
-		});
+			const dp = new DPlayer({
+				container: document.getElementById('dplayer'),
+				screenshot: true,
+				video: {
+					url: 'https://file.ourfor.top/source/CssData.mp4',
+					//pic: 'https://file.ourfor.top/source/kakegurui/kv_pc.jpg',
+					//thumbnails: 'https://file.ourfor.top/source/kakegurui/kv_pc.jpg'
+					pic: './image/third.jpg',
+					thumbnails: './image/third.jpg'
+				}
+			});
 		</script>
 </html>
