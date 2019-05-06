@@ -1,16 +1,40 @@
-<text class='title'>{{property}}</text>
-<view class='gap'></view>
-<view id='syntax' wx:for="{{grammar}}" wx:for-item="item">
-<text class='grammar'>{{item.name}}:{{item.value}}</text>
-</view>
-<view class='gap'></view>
-<view id='intro' wx:for="{{introduction}}" wx:for-item="item">
-<text class='introduction'>{{item}}</text>
-</view>
-<view class='gap'></view>
-<view id='valueView' wx:for="{{value}}" wx:for-item="item">
-<text class='value'>{{item.name}}:{{item.value}}</text>
-</view>
+<!--index.wxml-->
+<view class="container"> 
+  <view id="title">
+    <image src="{{titleImage}}"></image>
+  </view>
 
-<view class='gap'></view>
-<text id='code'>{{example}}</text>
+  <!--搜索表单-->
+    <form>
+    <input id='search' type='text' placeholder='输入你要查询的属性' value="{{inputValue}}" bindinput='keyword'></input>
+
+    <!--搜索联想-->
+    <view class="background">
+    <scroll-view scroll-y="true" class="scrollview" hidden="{{hideScroll}}" style="{{arrayHeight>340?   'height:340rpx':''}}">
+      <view wx:for="{{selectWord}}" wx:key="item">
+        <view data-keyword="{{item}}" bindtap="itemtap" class="itemview">{{item}}</view>
+      </view>
+    </scroll-view>
+    </view>
+
+    <view class='gap'></view>
+    <i-icon bindtap="doSearch" data-keyword="{{keyword}}" type="search" size="45" color="#19be6b" />
+    </form>
+    <!--显示错误信息-->
+    <view id="tip">{{inputLegal}}</view>
+
+    <view class="gap"></view><view class="gap"></view>
+    <!--显示热词-->
+    <view id="hot">
+        <view wx:for="{{hotSearch}}" wx:key="item" style="display: inline;">
+          <i-tag bindtap='hotSearch' data-keyword='{{item.keyword}}' datclass="i-tags" name="标签一" type="dot" color="{{item.color}}">{{item.keyword}}</i-tag>
+          <view class="space"></view>
+        </view>
+    </view>
+
+    <view id="author">
+      <text>Zip的小窝提供技术支持</text>
+    </view>
+    
+
+</view>

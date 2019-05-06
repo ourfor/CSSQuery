@@ -2,6 +2,13 @@
 const app = getApp();
 var rd; 
 
+var wayIndex = -1;
+var school_area = '';
+var grade = '';
+// 当联想词数量较多，使列表高度超过340rpx，那设置style的height属性为340rpx，小于340rpx的不设置height，由联想词列表自身填充
+// 结合上面wxml的<scroll-view>
+var arrayHeight = 0;
+
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -9,57 +16,161 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    property: 'align-self',
-    grammar: {},
-    value: {},
-    example: '',
-    hasChild: false,
-    introduction: {},
+    quickId: '5cc29cd28387daf78a191bde',
+    keyword:'',   //从客户端输入的查询内容
+    propetry: 'cursor',
+    titleImage1: "./CSSQuery.png",
+    titleImage: "./logo.png",
+    keywordSet: {},
+    inputLegal: "",
+    exist: false,
+    hotSearch: {},
+    times: [1,2,3],
+    hotId: "hot",
+    hideScroll: true,  //联想框列表
+    selectWord: [], //联想供用户选择的关键字
+    selectSet: ["text-align","text-content","text-uppercase"],
+    inputValue: "",
   },
 
-  onLoad: function() {
+  keyword:function(event){
+    this.setData({
+      keyword: event.detail.value
+    })
+    let e = event;
+    var prefix = e.detail.value
+    //匹配的结果
+    var newSource = []
+    if (prefix != "") {
+      // 对于数组array进行遍历，功能函数中的参数 `e`就是遍历时的数组元素值。
+      this.data.selectSet.forEach(function (e) {
+        // 用户输入的字符串如果在数组中某个元素中出现，将该元素存到newSource中
+        if (e.indexOf(prefix) != -1) {
+          console.log(e);
+          newSource.push(e)
+        }
+      })
+    };
+    // 如果匹配结果存在，那么将其返回，相反则返回空数组
+    if (newSource.length != 0) {
+      this.setData({
+        // 匹配结果存在，显示自动联想词下拉列表
+        hideScroll: false,
+        selectWord: newSource,
+        arrayHeight: newSource.length * 71
+      })
+    } else {
+      this.setData({
+        // 匹配无结果，不现实下拉列表
+        hideScroll: true,
+        selcetWord: []
+      })
+    }
+  },
+  doSearch:function(event){
+    let keyword = null;
+    if(event){
+      keyword = event.currentTarget.dataset.keyword
+      keyword = keyword.toLowerCase();  //忽略大小写
+      keyword = keyword.replace("－","-");  //忽略中文分隔符
+      keyword = keyword.replace(/ /g,"")
+      keyword = keyword.trim();    // 去掉首尾空格
+    }
+    //判断是否存在这样的属性
+    let SearchSet = this.data['keywordSet'];
+    let exist = SearchSet.hasOwnProperty(keyword);
+    if(exist){
+      this.setData({
+        inputLegal: ""
+      })
+      wx.setStorageSync('keyword',keyword)
+      wx.navigateTo({
+      url: '/pages/main/main'
+      })
+    }
+    else{
+      //console.log("不存在这样的属性");
+      this.setData({
+        inputLegal: "不存在这样的属性"
+      })
+    }
+
+    
+  },
+
+  //处理联想词汇点击
+  itemtap: function(event){
+      this.setData({
+        hideScroll: true,
+        selectWord: [],
+        keyword: event.currentTarget.dataset.keyword,
+        inputValue: event.currentTarget.dataset.keyword
+      });
+    let keyword = event.currentTarget.dataset.keyword;
+      wx.setStorageSync('keyword', keyword);
+      wx.navigateTo({
+        url: '/pages/main/main'
+      });
+      //console.log(this.data['keyword'])
+  },
+
+  //点击热门词汇按钮
+  hotSearch: function(event){
+      //console.log("被点击了");
+      let keyword = event.currentTarget.dataset.keyword;
+      //console.log(keyword)
+      wx.setStorageSync('keyword', keyword)
+      wx.navigateTo({
+        url: '/pages/main/main'
+      })
+  },
+
+  //页面评分·更改
+    onLoad: function () {
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
       })
       return
     }
-    const db = wx.cloud.database()
-    db.collection('css').where(
-      {'property': this.data['property'], 
-      'introduction': this.data['introduction'],
-      'value': this.data['value']
-      }
-    ).get({
+
+    const db = wx.cloud.database();
+    db.collection('quick').doc(this.data['quickID']).get({
       success: res => {
-        //rd 记录结果集合
-        rd = res.data;
-        console.log(typeof (rd))
-        console.log('read database successful',rd)
-        rd = rd[0];
-        rd=rd['content'];
-       // console.log(rd)
-       // console.log(rd['example'])
-        this.setData({hasChild: rd['hasChild']})
-        this.setData({ example: rd['example']})
-        this.setData({introduction: rd['introduction']})
-        this.setData({value: rd['value']})
-        this.setData({grammar: rd['grammar']})
-        
+        this.setData({
+          keywordSet: res.data.quick
+        })
+        //console.log(this.data['keywordSet']);
+        let keywordSet = this.data['keywordSet']
+        let keywordArray = new Array();
+        for(let i in keywordSet){
+          //console.log(i);
+          keywordArray.push(i);
+        }
+        //console.log(keywordArray)
+        //this.setData({selectSet:keywordArray});
+        console.log(this.data['selectSet']);
+        this.setData({
+          selectSet: keywordArray
+        });
+        console.log(this.data['selectSet']);
 
       },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          titile: 'read failed'
-        })
-        console.error('read failed',err)
+      fail: () => {
+        console.log("未查询到预期结果");
       }
     })
 
-    
-    
-  
+    //获取搜索热词
+    db.collection("hot").doc(this.data['hotId']).get({
+      success: res=>{
+        //console.log(res.data);
+        this.setData({hotSearch:res.data.keyword})
+        //console.log(this.data['hotSearch'])
+      }
+    })
+
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -78,7 +189,7 @@ Page({
     })
   },
 
-  onGetUserInfo: function(e) {
+  onGetUserInfo: function (e) {
     if (!this.logged && e.detail.userInfo) {
       this.setData({
         logged: true,
@@ -88,7 +199,7 @@ Page({
     }
   },
 
-  onGetOpenid: function() {
+  onGetOpenid: function () {
     // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
@@ -123,7 +234,7 @@ Page({
         })
 
         const filePath = res.tempFilePaths[0]
-        
+
         // 上传图片
         const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
@@ -135,7 +246,7 @@ Page({
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
-            
+
             wx.navigateTo({
               url: '../storageConsole/storageConsole'
             })

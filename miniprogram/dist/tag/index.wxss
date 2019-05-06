@@ -1,0 +1,191 @@
+.i-tag {
+	display: inline-block;
+	height: 24px;
+	line-height: 23px;
+	padding: 0 6px;
+	border-radius: 5px;
+	background: #fff;
+	font-size: 14px;
+	vertical-align: middle;
+	border: 1rpx solid #dddee1;
+	margin: 4px 5px
+}
+
+.i-tag-none {
+	border-color: #fff
+}
+
+.i-tag-default {
+	border-color: #dddee1;
+	background: #e9eaec
+}
+
+.i-tag-red {
+	background: #ed3f14;
+	color: #fff;
+  border-color: #ed3f14
+}
+
+.i-tag-red-border {
+	color: #ed3f14;
+	background: #fff;
+	border-color: #ed3f14
+}
+
+.i-tag-red-checked {
+	background: #ed3f14;
+	color: #fff;
+	border-color: #ed3f14
+}
+
+.i-tag-green {
+	background: #19be6b;
+	color: #fff;
+	border-color: #19be6b
+}
+
+.i-tag-green-border {
+	color: #19be6b;
+	background: #fff;
+	border-color: #19be6b
+}
+
+.i-tag-green-checked {
+	background: #19be6b;
+	color: #fff;
+	border-color: #19be6b
+}
+
+.i-tag-blue {
+	background: #2d8cf0;
+	color: #fff;
+	border-color: #2d8cf0
+}
+
+.i-tag-blue-border {
+	color: #2d8cf0;
+	background: #fff;
+	border-color: #2d8cf0
+}
+
+.i-tag-blue-checked {
+	background: #2d8cf0;
+	color: #fff;
+	border-color: #2d8cf0
+}
+
+.i-tag-yellow {
+	background: #f90;
+	color: #fff;
+	border-color: #f90
+}
+
+.i-tag-yellow-border {
+	color: #f90;
+	background: #fff;
+	border-color: #f90
+}
+
+.i-tag-yellow-checked {
+	background: #f90;
+	color: #fff;
+	border-color: #f90
+}
+
+.i-tag-default-checked {
+	background: #e9eaec;
+	color: #495060;
+	border-color: #e9eaec
+}
+
+.i-tag-pink {
+	background: pink;
+	color: #fff;
+	border-color: pink
+}
+
+.i-tag-pink-border {
+	color: pink;
+	background: #fff;
+	border-color: pink
+}
+
+.i-tag-pink-checked {
+	background: pink;
+	color: #fff;
+	border-color: pink
+}
+
+.i-tag-honeydew {
+	background: honeydew;
+	color: rgb(56, 46, 46);
+	border-color: honeydew
+}
+
+.i-tag-honeydew-border {
+	color: honeydew;
+	background: #fff;
+	border-color: honeydew
+}
+
+.i-tag-honeydew-checked {
+	background: honeydew;
+	color: rgb(56, 46, 46);
+	border-color: honeydew
+}
+
+.i-tag-peru {
+	background: peru;
+	color: #fff;
+	border-color: peru
+}
+
+.i-tag-peru-border {
+	color: peru;
+	background: #fff;
+	border-color: peru
+}
+
+.i-tag-peru-checked {
+	background: peru;
+	color: #fff;
+	border-color: peru
+}
+
+.i-tag-lightsalmon {
+	background: lightsalmon;
+	color: #fff;
+	border-color: lightsalmon
+}
+
+.i-tag-lightsalmon-border {
+	color: lightsalmon;
+	background: #fff;
+	border-color: lightsalmon
+}
+
+.i-tag-lightsalmon-checked {
+	background: lightsalmon;
+	color: #fff;
+	border-color: lightsalmon
+}
+
+
+.i-tag-violet {
+	background: blueviolet;
+	color: #fff;
+	border-color: blueviolet
+}
+
+.i-tag-violet-border {
+	color: blueviolet;
+	background: #fff;
+	border-color: blueviolet
+}
+
+.i-tag-violet-checked {
+	background: blueviolet;
+	color: #fff;
+	border-color: blueviolet
+}
+

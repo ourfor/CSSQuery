@@ -1,4 +1,6 @@
 {
   "usingComponents": {
+      "wemark": "/components/wemark/wemark",
+      "i-tag": "/dist/tag/index"
   }
 }
