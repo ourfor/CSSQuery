@@ -5,6 +5,20 @@
   margin-bottom: 20px;
 }
 
+.canvas{
+  width: 800px;
+  height: 400px;
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+}
+
+.page-body-wrapper{
+  z-index: -2;
+}
+
 #title>image{
   height: 80px;
   padding: 0;
