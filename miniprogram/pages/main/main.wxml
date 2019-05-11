@@ -1,4 +1,3 @@
-<view class="page-body" bindtap="drawBall">
 <text class='title'>{{property}}</text>
 
 <view class='gap'></view>
@@ -72,4 +71,3 @@
 <i-notice-bar icon="systemprompt">
     CSS样式查询手册
 </i-notice-bar>
-</view>

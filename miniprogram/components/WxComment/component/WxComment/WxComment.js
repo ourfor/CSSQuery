@@ -407,14 +407,14 @@ Component({
         scrollTop: 10000
       })
     },
-    _isAdmin: function() {
+    _isAdmin: function () {
       var that = this;
       const user = AV.User.current();
 
       var query = new AV.Query('Admin');
       query.equalTo('adminId', user.id);
       query.find().then(function (results) {
-        if(results.length >= 1) {
+        if (results.length >= 1) {
           that.data.is_admin = true;
           wx.showToast({
             title: '欢迎Admin!',
@@ -422,7 +422,7 @@ Component({
             duration: 1000
           })
         }
-      }, function(error) {
+      }, function (error) {
         console.log(error)
         // 101: 查询的 Class 不存在
         if (error.code == 101) {
@@ -434,7 +434,7 @@ Component({
         }
       })
     },
-    _writeCommentSubscribeInLeanCloud: function() {
+    _writeCommentSubscribeInLeanCloud: function () {
       var that = this;
       // 评论订阅
       const user = AV.User.current();
@@ -443,7 +443,7 @@ Component({
       query.equalTo('user_id', user.id);
       query.find().then(function (results) {
         //console.log(results);
-        if(results.length == 1) {
+        if (results.length == 1) {
           var op_str = "update WxCommentSubscribe set comment_count_array=op('AddUnique', {'objects':[pointer('WxCommentCount','" + that.data.comment_count_id + "')]}) where objectId='" + results[0].id + "'";
           AV.Query.doCloudQuery(op_str).then(function (data) {
             console.log('更新评论订阅成功');
@@ -452,10 +452,10 @@ Component({
             console.error(error);
           });
         }
-        else if(results.length > 1){
+        else if (results.length > 1) {
           console.log('WxCommentSubscribe ID重复')
         }
-        else{
+        else {
           console.log('评论订阅还未有该用户')
           console.log(results.length)
           var ArticleCommentSubscribe = AV.Object.extend('WxCommentSubscribe');
@@ -470,7 +470,7 @@ Component({
         console.log(error);
         console.log(error.code)
         // 101: 查询的 Class 不存在
-        if(error.code == 101) {
+        if (error.code == 101) {
           console.log(that.data.comment_count_id);
           var ArticleCommentSubscribe = AV.Object.extend('WxCommentSubscribe');
           var articlecommentsubscribe = new ArticleCommentSubscribe();
@@ -482,7 +482,7 @@ Component({
         }
       });
     },
-    _writeCommentCountInLeanCloud: function() {
+    _writeCommentCountInLeanCloud: function () {
       // 更新评论计数
       var that = this;
       //console.log('开始更新评论计数');
@@ -494,7 +494,7 @@ Component({
           var todo = AV.Object.createWithoutData('WxCommentCount', results[0].id);
           todo.set('count', that.data.all_comment_num);
           todo.set('article_url', that.data.articleURL)
-          todo.save().then(function(todo){
+          todo.save().then(function (todo) {
             that.data.comment_count_id = todo.id;
             // 更新用户评论订阅,count增加和减少都触发订阅
             that._writeCommentSubscribeInLeanCloud();

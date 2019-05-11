@@ -11,7 +11,7 @@ Page({
     takeSession: false,
     requestResult: '',
     rd: '',
-    property: 'main',
+    property: '',
     grammar: {},
     value: {},
     example: '',
