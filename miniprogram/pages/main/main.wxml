@@ -1,3 +1,4 @@
+<view class="page-body" bindtap="drawBall">
 <text class='title'>{{property}}</text>
 
 <view class='gap'></view>
@@ -6,7 +7,7 @@
     <i-step>
         <view slot="title">
           <view id='syntax' wx:for="{{grammar}}" wx:key="item">
-          <text class='grammar'>{{item.name}}:<text id='syntax_value'>{{item.value}}</text></text>
+          <text class='grammar'>{{item.name}}</text>:<text id='syntax_value'>{{item.value}}</text>
           </view>
         </view>
         <view slot="content">
@@ -71,3 +72,4 @@
 <i-notice-bar icon="systemprompt">
     CSS样式查询手册
 </i-notice-bar>
+</view>

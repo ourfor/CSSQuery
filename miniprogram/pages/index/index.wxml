@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="page-body" bindtap="drawBall">
+
 <view class="container">
   <view id="title">
     <image src="{{titleImage}}"></image>
@@ -38,8 +38,4 @@
     </view>
     
 
-</view>
-<view class="page-body-wrapper">
-    <canvas canvas-id="canvas" class="canvas"></canvas>
-  </view>
 </view>

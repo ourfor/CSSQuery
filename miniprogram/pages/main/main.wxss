@@ -10,6 +10,12 @@
   text-align: left;
   overflow:auto;
 }*/
+
+
+.top{
+  width: 100%;
+}
+
 #code{
   display: none;
   visibility: hidden;
@@ -191,4 +197,8 @@ page {
 
 #code_md{
   font-family: none;
+}
+
+.grammar{
+  color: #1c887e;
 }
