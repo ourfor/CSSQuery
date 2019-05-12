@@ -22,6 +22,7 @@
 								<span>支持</span>
 							</nav>
 						</header>
+						<canvas></canvas>
 						<section>
 							<article>来看看CSSQuery有哪些创新的地方</article>
 							<p>CSSQuery基于微信云开发开发，使用微信云开发提供的数据库和存储服务，查询速度快，数据来源可靠，微信作为宿主环境，小程序可以在各个支持微信小程序的终端运行</p>
@@ -116,5 +117,53 @@
 					thumbnails: './image/third.jpg'
 				}
 			});
+		</script>
+		<script>
+			document.addEventListener('touchmove', function (e) {
+    e.preventDefault()
+})
+var c = document.getElementsByTagName('canvas')[0],
+    x = c.getContext('2d'),
+    pr = window.devicePixelRatio || 1,
+    w = window.innerWidth,
+    h = window.innerHeight,
+    f = 90,
+    q,
+    m = Math,
+    r = 0,
+    u = m.PI*2,
+    v = m.cos,
+    z = m.random
+    
+    c.width = w*pr
+    c.height = h*pr
+    x.scale(pr, pr)
+    x.globalAlpha = 0.6
+function i(){
+    x.clearRect(0,0,w,h)
+    q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
+    while(q[1].x<w+f) d(q[0], q[1])
+}
+function d(i,j){ 
+    x.beginPath()
+    x.moveTo(i.x, i.y)
+    x.lineTo(j.x, j.y)
+    var k = j.x + (z()*2-0.25)*f,
+    n = y(j.y)
+    x.lineTo(k, n)
+    x.closePath()
+    r-=u/-50
+    x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
+    x.fill()
+    q[0] = q[1]
+    q[1] = {x:k,y:n}
+}
+function y(p){
+    var t = p + (z()*2-1.1)*f
+    return (t>h||t<0) ? y(p) : t
+}
+document.onclick = i
+document.ontouchstart = i
+i()
 		</script>
 </html>
