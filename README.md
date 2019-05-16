@@ -42,6 +42,10 @@
 
 > 考虑到用户的微信使用时长和使用微信的目的性，很多功能暂时不打算加入。
 
+基本结构
+
+![CSSQuery_detail](https://user-images.githubusercontent.com/33711476/57830158-d9fc8f80-77e3-11e9-8ef2-c9474771cb91.png)
+
 ## 界面演示
 
 <table>
@@ -62,6 +66,8 @@
 使用java爬取特定网页，同时将爬取的数据实例化一个` JavaBean `对象，内容爬取完毕后，序列化到硬盘，再导入到我们的云开发数据库
 
 可以尝试爬取Sun的java包的api文档，html5的语法文档等等。
+
+Java爬虫源码
 
 ## 关于数据库
 
