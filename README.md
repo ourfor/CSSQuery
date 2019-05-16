@@ -67,7 +67,11 @@
 
 可以尝试爬取Sun的java包的api文档，html5的语法文档等等。
 
-Java爬虫源码
+
+
+***Java爬虫源码***、***JavaBeans*** 结构,详见[#7](https://github.com/ourfor/CSSQuery/issues/7)
+
+
 
 ## 关于数据库
 
