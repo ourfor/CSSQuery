@@ -58,7 +58,7 @@
 ## 涉及技术平台
 - [LeanCloud](https://leancloud.cn)
 使用LeanCloud提供的免费服务应用来存储用户评论，页面访问次数，LeanCloud提供的接口对` Count `(存放页面访问次数)表的数据进行获取，再通过自己的服务器对热门搜索🔍进行定时整理，整理完毕后自动更新微信云开发的数据库中的` HotSearch `表，从而达到热门搜索推荐的效果
-![](https://ws1.sinaimg.cn/large/005GQrpLgy1g2f8w92xysj32za1pk7wh.jpg)
+
 
 ## 如何扩充数据库
 
