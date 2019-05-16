@@ -63,6 +63,15 @@
 
 可以尝试爬取Sun的java包的api文档，html5的语法文档等等。
 
+## 关于数据库
+
+在这个项目中，我们一共使用了3个数据库，之所以使用这么多数据库是有原因的，` 微信云开发数据库 `负责存放客户端查询的主要内容,数据库类型类似` Mongodb `,
+而存储评论则是用到了` leanCloud `提供的免费数据库，这两个数据库的服务器都在境内，并且都是免费的，优点就是访问速度快不用备案，而缺点就是免费版本有限制，控制权限比较低，所以我们另外使用了一个自己的境外服务器，这个服务器复制定期获取` leanCloud `上面存储的页面访问量，同时将导出的json文件在` sql serve `中进行分析(见[#6](https://github.com/ourfor/CSSQuery/issues/6))，分析完毕后将热点数据更新到` 微信云开发 `提供的数据库中
+
+<img width="1810" alt="Xnip2019-05-15_13-44-21" src="https://user-images.githubusercontent.com/33711476/57751250-a94f2400-7717-11e9-8349-a01623f06265.png">
+
+
+ 
 ## Credit
 
 | <img src="https://avatars2.githubusercontent.com/u/33711476?v=4" alt="ourfor" width="100px" height="100px"/> |<img src="https://avatars2.githubusercontent.com/u/44439053?v=4" alt="ourEmpire" width="100px" height="100px"/> |
